@@ -15,6 +15,7 @@ step "E-Mail - Risk Level Deployment Notification" {
 
     action {
         properties = {
+            Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-2721"
             Octopus.Action.Template.Version = "6"
             RiskLevelColorCode = "#{Risikostufe.Farbcode}"
