@@ -21,7 +21,7 @@ step "File System - Add Directory" {
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-646"
             Octopus.Action.Template.Version = "13"
-            Path = "Path"
+            Path = "PathNew"
             PermissionLevel = "Modify"
             RemoveContent = "False"
             SetPermission = "False"
