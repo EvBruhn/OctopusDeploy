@@ -10,3 +10,22 @@ step "Manual Intervention Required" {
         }
     }
 }
+
+step "File System - Add Directory" {
+    properties = {
+        Octopus.Action.TargetRoles = "App-Server"
+    }
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-646"
+            Octopus.Action.Template.Version = "13"
+            Path = "Path"
+            PermissionLevel = "Modify"
+            RemoveContent = "False"
+            SetPermission = "False"
+        }
+        worker_pool_variable = ""
+    }
+}
