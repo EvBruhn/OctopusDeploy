@@ -6,6 +6,20 @@ step "Manual Intervention Required" {
             Octopus.Action.Manual.BlockConcurrentDeployments = "False"
             Octopus.Action.Manual.Instructions = "Test"
             Octopus.Action.Manual.ResponsibleTeamIds = "TZ64-DevOps"
+            Octopus.Action.RunOnServer = "false"
+        }
+    }
+}
+
+step "E-Mail - Risk Level Deployment Notification" {
+
+    action {
+        properties = {
+            Octopus.Action.Template.Id = "ActionTemplates-2721"
+            Octopus.Action.Template.Version = "6"
+            RiskLevelColorCode = "#{Risikostufe.Farbcode}"
+            RiskLevelDate = "#{Risikostufe.Deployment.Termin}"
+            To = "#{FuPo-TZ64-Betrieb}"
         }
     }
 }
